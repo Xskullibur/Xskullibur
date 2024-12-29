@@ -1,4 +1,4 @@
-# Welcome to my digital playground! 👋
+# Welcome To My Digital Playground! 👋
 
 <div align="center">
   
@@ -6,7 +6,7 @@
 
 🏆 **Achievements**
   
-![](https://github-profile-trophy.vercel.app/?username=Xskullibur&theme=nord&no-frame=true&no-bg=false&margin-w=4)
+![](https://github-profile-trophy.vercel.app/?username=Xskullibur&theme=nord&no-frame=true&no-bg=false&margin-w=4&margin-h=4&title=-Stars,-Followers&column=-1)
 
 </div>
 
@@ -62,6 +62,5 @@ Save in /dev/brain: Y
 ## 🤝 Connect With Me
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/alson-sim)
-[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Xskullibur)
 
 </div>
