@@ -2,28 +2,26 @@ name: Update README with Current Time
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-          
-      - name: Update README
+        
+      - name: Update timestamp in README
         run: |
-          python update_readme.py
+          timestamp=$(TZ=Asia/Singapore date '+%a, %d %b %Y at %H:%M:%S +08')
+          sed -i "s/Last login: .* from/Last login: $timestamp from/" README.md
           
-      - name: Commit and push changes
+      - name: Commit and push if changed
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update README with current timestamp"
-          git push
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add README.md
+            git commit -m "Update timestamp in README"
+            git push
+          fi
